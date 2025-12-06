@@ -1,0 +1,63 @@
+# =========================
+# Node / React (frontend)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+
+# Build outputs
+build/
+dist/
+.next/
+out/
+
+# =========================
+# Python / FastAPI (backend)
+# =========================
+
+# Virtual environments
+venv/
+backend/venv/
+
+# Python cache
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Alembic migration cache (if any)
+alembic.ini.bak
+
+# =========================
+# Environment / secrets
+# =========================
+
+# Root or general env files
+.env
+.env.*
+# Backend env
+backend/.env
+# Frontend env
+frontend/.env
+
+# =========================
+# Local uploads / generated data
+# =========================
+backend/uploads/
+uploads/
+
+# =========================
+# IDE / OS
+# =========================
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db

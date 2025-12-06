@@ -1,0 +1,71 @@
+/* src/styles/global.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background: radial-gradient(circle at top left, #1d4ed8 0, #020617 40%, #000 80%);
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* Smoother scrolling & nicer scrollbars (for modern browsers) */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6, #f97316);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a855f7, #fb923c);
+}
+
+/* Utility class for main background sections */
+.app-gradient-bg {
+  background: radial-gradient(circle at top left, #1d4ed8 0, #020617 50%, #000 90%);
+}
+
+/* Chat bubbles could optionally use these classes if you like */
+.chat-bubble-user {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: #f9fafb;
+}
+
+.chat-bubble-assistant {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+/* Make MUI Typography links nicer by default */
+a {
+  color: #a855f7;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
