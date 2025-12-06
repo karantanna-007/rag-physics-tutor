@@ -1,5 +1,14 @@
 # backend/main.py
 
+import os
+import sys
+
+# Ensure the backend directory (which contains the `app` package) is on sys.path.
+# This makes `from app...` imports work both locally and on Render.
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+if BASE_DIR not in sys.path:
+    sys.path.append(BASE_DIR)
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi  # <-- NEW
@@ -34,7 +43,12 @@ def create_app() -> FastAPI:
     # CORS configuration (allow frontend on Vercel + local dev)
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+        allow_origins=[
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+            # Later you will add your Vercel URL here, e.g.:
+            # "https://your-frontend-app.vercel.app",
+        ],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
@@ -143,7 +157,7 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-        "main:app",
+        "main:app",  # for local runs from inside the backend/ folder
         host="0.0.0.0",
         port=8000,
         reload=True,
